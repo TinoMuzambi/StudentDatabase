@@ -1,10 +1,8 @@
 // MZMTIN002
 
-#include <cstring>
 #include "stu_database.h"
-#include "cstdio"
 
-char * prompt() {
+char* MZMTIN002::prompt() {
     for (;;) {
         char ans[2];
         char * ans_in = fgets(ans, 2, stdin);

@@ -1,13 +1,12 @@
-//
-// Created by Asus Pro on 2020/02/16.
-//
+// MZMTIN002
 
 #ifndef ASSIGNMENT_1_STU_DATABASE_H
 #define ASSIGNMENT_1_STU_DATABASE_H
+#include "cstdio"
+#include <cstring>
 
-
-class stu_database {
-
+namespace MZMTIN002 {
+    char * prompt();
 };
 
 
