@@ -14,8 +14,10 @@ char* MZMTIN002::prompt() {
         } else if (strncmp(ans_in, "2", 2) == 0) {
             puts("call to read database.");
         } else if (strncmp(ans_in, "3", 2) == 0) {
-            puts("call to display given data.");
+            puts("call to save database.");
         } else if (strncmp(ans_in, "4", 2) == 0) {
+            puts("call to display given data.");
+        } else if (strncmp(ans_in, "5", 2) == 0) {
             puts("call to grade student.");
         } else {
             puts("Invalid option!");
@@ -24,21 +26,10 @@ char* MZMTIN002::prompt() {
         puts("Available options:");
         puts("1. add student");
         puts("2. read database");
-        puts("3. display given student data");
-        puts("4. grade student");
+        puts("3. save database");
+        puts("4. display given student data");
+        puts("5. grade student");
         puts("q. quit");
         puts("Enter a number (or q to quit) and press return...\n");
     }
-}
-
-int main() {
-    puts("Database Interface");
-    puts("Available options:");
-    puts("1. add student");
-    puts("2. read database");
-    puts("3. display given student data");
-    puts("4. grade student");
-    puts("q. quit");
-    puts("Enter a number (or q to quit) and press return...\n");
-    prompt();
 }
