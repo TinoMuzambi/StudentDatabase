@@ -8,7 +8,7 @@
 #include <vector>
 
 namespace MZMTIN002 {
-    char * prompt();
+    void prompt();
     void add_student(std::string name, std::string surname, std::string stu_num, std::string class_rec);
     void read_database();
     void save_database();
@@ -20,7 +20,7 @@ namespace MZMTIN002 {
         std::string stu_num;
         std::string class_rec;
     };
-    std::vector<StudentRecord> records;
+    inline std::vector<StudentRecord> records;
 };
 
 

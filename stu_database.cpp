@@ -2,10 +2,10 @@
 
 #include "stu_database.h"
 
-char* MZMTIN002::prompt() {
+void MZMTIN002::prompt() {
     for (;;) {
-        char ans[2];
-        char * ans_in = fgets(ans, 2, stdin);
+        char buf[2];
+        char * ans_in = fgets(buf, 2, stdin);
         fflush(stdin);
         if (strncmp(ans_in, "q", 2) == 0) {
             break;
