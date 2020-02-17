@@ -4,6 +4,8 @@
 #define ASSIGNMENT_1_STU_DATABASE_H
 #include "cstdio"
 #include "string"
+#include <fstream>
+#include <iostream>
 #include <cstring>
 #include <vector>
 
