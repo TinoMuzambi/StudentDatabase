@@ -16,14 +16,14 @@ namespace MZMTIN002 {
     void add_student(std::string name, std::string surname, std::string stu_num, std::string class_rec);
     void read_database();
     void save_database();
-    void display_data(std::string stu_num);
-    void grade_student(std::string stu_num);
+    void display_data(const std::string& stu_num);
+    void grade_student(const std::string& stu_num);
     struct StudentRecord {
         std::string name;
         std::string surname;
         std::string stu_num;
         std::string class_rec;
     };
-};
+}
 
 #endif //ASSIGNMENT_1_STU_DATABASE_H
