@@ -20,8 +20,6 @@ namespace MZMTIN002 {
         std::string stu_num;
         std::string class_rec;
     };
-    inline std::vector<StudentRecord> records;
 };
-
 
 #endif //ASSIGNMENT_1_STU_DATABASE_H

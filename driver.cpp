@@ -1,7 +1,6 @@
 // MZMTIN002
 
 #include "driver.h"
-#include "stu_database.h"
 
 int main() {
     puts("Database Interface");
