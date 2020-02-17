@@ -7,12 +7,12 @@ static vector<MZMTIN002::StudentRecord> records;
 
 void MZMTIN002::prompt() {
     for (;;) {
-        char buf[2];
-        char * ans_in = fgets(buf, 2, stdin);
+        string ans;
+        getline(cin, ans);
         fflush(stdin);
-        if (strncmp(ans_in, "q", 2) == 0) {
+        if (ans == "q") {
             break;
-        } else if (strncmp(ans_in, "1", 2) == 0) {
+        } else if (ans == "1") {
             puts("Please enter the student's name:");
             string name;
             getline (cin, name);
@@ -27,16 +27,16 @@ void MZMTIN002::prompt() {
             string class_rec;
             getline(cin, class_rec);
             MZMTIN002::add_student(name, surname, stu_num, class_rec);
-        } else if (strncmp(ans_in, "2", 2) == 0) {
+        } else if (ans == "2") {
             MZMTIN002::read_database();
-        } else if (strncmp(ans_in, "3", 2) == 0) {
+        } else if (ans == "3") {
             MZMTIN002::save_database();
-        } else if (strncmp(ans_in, "4", 2) == 0) {
+        } else if (ans == "4") {
             puts("Please enter the student's student number:");
             string stu_num;
             getline(cin, stu_num);
             MZMTIN002::display_data(stu_num);
-        } else if (strncmp(ans_in, "5", 2) == 0) {
+        } else if (ans == "5") {
             puts("Please enter the student's student number:");
             string stu_num;
             getline(cin, stu_num);
@@ -96,7 +96,7 @@ void MZMTIN002::save_database() {
     ofstream out("records.txt", ios::app);
     if (out.is_open()) {
         for (auto record : records) {
-            out << "\r" << record.name << " " << record.surname << " " << record.stu_num << " " << record.class_rec;
+            out << record.name << " " << record.surname << " " << record.stu_num << " " << record.class_rec << endl;
         }
     } else {
         puts("Unable to open file.");
@@ -124,4 +124,18 @@ void MZMTIN002::display_data(string stu_num) {
 
 void MZMTIN002::grade_student(string stu_num) {
     puts("Inside grade student func");
+    for (auto & record: records) {
+        if (record.stu_num == stu_num) {
+            stringstream ss(record.class_rec);
+            string token;
+            int total = 0;
+            int count = 0;
+            while (ss >> token) {
+                total += stoi(token);
+                count++;
+            }
+            cout << "grade for " << record.name << " is " << nearbyint((float) total/count) << endl;
+            break;
+        }
+    }
 }

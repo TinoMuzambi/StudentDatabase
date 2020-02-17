@@ -6,6 +6,8 @@
 #include "string"
 #include <fstream>
 #include <iostream>
+#include <sstream>
+#include <cmath>
 #include <cstring>
 #include <vector>
 
