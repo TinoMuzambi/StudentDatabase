@@ -3,6 +3,7 @@
 #ifndef ASSIGNMENT_1_STU_DATABASE_H
 #define ASSIGNMENT_1_STU_DATABASE_H
 #include "cstdio"
+#include "cstdlib"
 #include "string"
 #include <fstream>
 #include <iostream>

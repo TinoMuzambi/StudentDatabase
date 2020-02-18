@@ -42,8 +42,8 @@ void MZMTIN002::save_database() {
     ofstream out("records.txt");
     if (out.is_open()) {
         puts("Writing file...");
-        for (const auto& record : records) {
-            out << record.name << " " << record.surname << " " << record.stu_num << " " << record.class_rec << endl;
+        for (const StudentRecord&  record : records) {
+            out << record.name.c_str() << " " << record.surname.c_str() << " " << record.stu_num.c_str() << " " << record.class_rec.c_str() << endl;
         }
     } else {
         puts("Unable to open file.");
@@ -56,7 +56,7 @@ void MZMTIN002::add_student(string name, string surname, const string& stu_num, 
     int count = 0;
     bool dupe = false;
     for (auto & record: records) {
-        if (record.stu_num == stu_num) {
+        if (record.stu_num.c_str() == stu_num) {
             dupe = true;
             break;
         }
@@ -76,13 +76,13 @@ void MZMTIN002::display_data(const string& stu_num) {
     puts("Searching...");
     bool found = false;
     for (auto & record: records) {
-        if (record.stu_num == stu_num) {
+        if (record.stu_num.c_str() == stu_num) {
             puts("Student found:");
             found = true;
-            cout << "Name:           " << record.name << endl; // printf string formatting didn't wanna work so this is what we've got.
-            cout << "Surname:        " << record.surname << endl;
-            cout << "Student Number: " << record.stu_num << endl;
-            cout << "Class Record:   " << record.class_rec << endl;
+            cout << "Name:           " << record.name.c_str() << endl; // printf string formatting didn't wanna work so this is what we've got.
+            cout << "Surname:        " << record.surname.c_str() << endl;
+            cout << "Student Number: " << record.stu_num.c_str() << endl;
+            cout << "Class Record:   " << record.class_rec.c_str() << endl;
 
             break;
         }
@@ -96,10 +96,10 @@ void MZMTIN002::grade_student(const string& stu_num) {
     puts("Searching...");
     bool found = false;
     for (auto & record: records) {
-        if (record.stu_num == stu_num) {
+        if (record.stu_num.c_str() == stu_num) {
             puts("Student found:");
             found = true;
-            stringstream ss(record.class_rec);
+            stringstream ss(record.class_rec.c_str());
             string token;
             int total = 0;
             int count = 0;
@@ -107,7 +107,7 @@ void MZMTIN002::grade_student(const string& stu_num) {
                 total += stoi(token);
                 count++;
             }
-            cout << "Grade for " << record.stu_num << " is " << nearbyint((double) total/count) << endl;
+            cout << "Grade for " << record.stu_num.c_str() << " is " << nearbyint((double) total/count) << endl;
             break;
         }
     }
