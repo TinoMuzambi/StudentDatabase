@@ -42,8 +42,8 @@ void MZMTIN002::save_database() {
     ofstream out("records.txt");
     if (out.is_open()) {
         puts("Writing file...");
-        for (const StudentRecord&  record : records) {
-            out << record.name.c_str() << " " << record.surname.c_str() << " " << record.stu_num.c_str() << " " << record.class_rec.c_str() << endl;
+        for (int i = 0; i < records.size(); ++i) {
+            out << records[i].name.c_str() << " " << records[i].surname.c_str() << " " << records[i].stu_num.c_str() << " " << records[i].class_rec.c_str() << endl;
         }
     } else {
         puts("Unable to open file.");
