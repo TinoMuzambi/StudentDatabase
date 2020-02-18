@@ -6,8 +6,9 @@ using namespace std;
 static vector<MZMTIN002::StudentRecord> records;
 
 void MZMTIN002::read_database() {
-    puts("Opening file...");
-    string filename = "records.txt";
+    puts("Enter the name of the text file:");
+    string filename;
+    getline(cin, filename);
     ifstream in(filename.c_str());
 
     if(!in) {
