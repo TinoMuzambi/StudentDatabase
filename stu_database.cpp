@@ -44,7 +44,7 @@ void MZMTIN002::save_database() {
     string filename;
     getline(cin, filename);
     puts("\nOpening file...");
-    ofstream out(filename);
+    ofstream out(filename.c_str());
     if (out.is_open()) {
         puts("Writing file...");
         for (int i = 0; i < records.size(); ++i) {
