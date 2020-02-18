@@ -55,8 +55,8 @@ void MZMTIN002::save_database() {
 void MZMTIN002::add_student(string name, string surname, const string& stu_num, string class_rec) {
     int count = 0;
     bool dupe = false;
-    for (auto & record: records) {
-        if (record.stu_num.c_str() == stu_num) {
+    for (int i = 0; i < records.size(); ++i) {
+        if (records[i].stu_num == stu_num) {
             dupe = true;
             break;
         }
@@ -75,7 +75,7 @@ void MZMTIN002::add_student(string name, string surname, const string& stu_num, 
 void MZMTIN002::display_data(const string& stu_num) {
     puts("Searching...");
     bool found = false;
-    for (auto & record: records) {
+    for (StudentRecord & record: records) {
         if (record.stu_num.c_str() == stu_num) {
             puts("Student found:");
             found = true;
@@ -95,7 +95,7 @@ void MZMTIN002::display_data(const string& stu_num) {
 void MZMTIN002::grade_student(const string& stu_num) {
     puts("Searching...");
     bool found = false;
-    for (auto & record: records) {
+    for (StudentRecord & record: records) {
         if (record.stu_num.c_str() == stu_num) {
             puts("Student found:");
             found = true;
