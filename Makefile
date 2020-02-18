@@ -9,7 +9,6 @@ stu_database.o: stu_database.cpp stu_database.h
 	g++ -c -o stu_database.o stu_database.cpp
 
 clean:
-	rm driver *.o
-
+	rm -f ./driver *.o
 run:
 	./driver
