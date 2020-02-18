@@ -5,10 +5,7 @@
 
 #include "stu_database.h"
 
-namespace MZMTIN002 {
-    class driver {
-
-    };
-}
+class driver {
+};
 
 #endif //ASSIGNMENT_1_DRIVER_H

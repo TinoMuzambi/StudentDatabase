@@ -2,6 +2,7 @@
 
 #include "driver.h"
 using namespace std;
+using namespace MZMTIN002;
 
 int main() {
     puts("Database Interface");
@@ -35,21 +36,21 @@ int main() {
             string class_rec;
             getline(cin, class_rec);
 
-            MZMTIN002::add_student(name, surname, stu_num, class_rec);
+            add_student(name, surname, stu_num, class_rec);
         } else if (ans == "2") {
-            MZMTIN002::read_database();
+            read_database();
         } else if (ans == "3") {
-            MZMTIN002::save_database();
+            save_database();
         } else if (ans == "4") {
             puts("\nPlease enter the student's student number:");
             string stu_num;
             getline(cin, stu_num);
-            MZMTIN002::display_data(stu_num);
+            display_data(stu_num);
         } else if (ans == "5") {
             puts("\nPlease enter the student's student number:");
             string stu_num;
             getline(cin, stu_num);
-            MZMTIN002::grade_student(stu_num);
+            grade_student(stu_num);
         } else {
             puts("Invalid option.");
         }
