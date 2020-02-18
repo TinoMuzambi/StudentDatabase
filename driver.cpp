@@ -52,7 +52,7 @@ int main() {
             getline(cin, stu_num);
             grade_student(stu_num);
         } else {
-            puts("Invalid option.");
+            puts("\nInvalid option.");
         }
 
         puts("\nDatabase Interface");
