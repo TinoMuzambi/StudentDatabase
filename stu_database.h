@@ -11,17 +11,18 @@
 #include <cstring>
 #include <vector>
 
+using namespace std;
 namespace MZMTIN002 {
-    void add_student(std::string name, std::string surname, std::string stu_num, std::string class_rec);
+    void add_student(string name, string surname, const string& stu_num, string class_rec);
     void read_database();
     void save_database();
-    void display_data(const std::string& stu_num);
-    void grade_student(const std::string& stu_num);
+    void display_data(const string& stu_num);
+    void grade_student(const string& stu_num);
     struct StudentRecord {
-        std::string name;
-        std::string surname;
-        std::string stu_num;
-        std::string class_rec;
+        string name;
+        string surname;
+        string stu_num;
+        string class_rec;
     };
 }
 

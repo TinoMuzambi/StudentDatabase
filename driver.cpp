@@ -12,27 +12,26 @@ int main() {
     puts("4. display given student data");
     puts("5. grade student");
     puts("q. quit");
-    puts("Enter a number (or q to quit) and press return...\n");
+    puts("Enter a number (or q to quit) and press return...");
     for (;;) {
         string ans;
         getline(cin, ans);
-        fflush(stdin);
         if (ans == "q") {
             break;
         } else if (ans == "1") {
-            puts("Please enter the student's name:");
+            puts("\nPlease enter the student's name:");
             string name;
             getline (cin, name);
 
-            puts("Please enter the student's surname:");
+            puts("\nPlease enter the student's surname:");
             string surname;
             getline(cin, surname);
 
-            puts("Please enter the student's student number:");
+            puts("\nPlease enter the student's student number:");
             string stu_num;
             getline(cin, stu_num);
 
-            puts("Please enter the student's class record:");
+            puts("\nPlease enter the student's class record:");
             string class_rec;
             getline(cin, class_rec);
 
@@ -42,20 +41,20 @@ int main() {
         } else if (ans == "3") {
             MZMTIN002::save_database();
         } else if (ans == "4") {
-            puts("Please enter the student's student number:");
+            puts("\nPlease enter the student's student number:");
             string stu_num;
             getline(cin, stu_num);
             MZMTIN002::display_data(stu_num);
         } else if (ans == "5") {
-            puts("Please enter the student's student number:");
+            puts("\nPlease enter the student's student number:");
             string stu_num;
             getline(cin, stu_num);
             MZMTIN002::grade_student(stu_num);
         } else {
-            puts("Invalid option!");
+            puts("Invalid option.");
         }
 
-        puts("Database Interface");
+        puts("\nDatabase Interface");
         puts("Available options:");
         puts("1. add student");
         puts("2. read database");
@@ -63,6 +62,6 @@ int main() {
         puts("4. display given student data");
         puts("5. grade student");
         puts("q. quit");
-        puts("Enter a number (or q to quit) and press return...\n");
+        puts("Enter a number (or q to quit) and press return...");
     }
 }
