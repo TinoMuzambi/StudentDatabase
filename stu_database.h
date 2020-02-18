@@ -12,7 +12,6 @@
 #include <vector>
 
 namespace MZMTIN002 {
-    void prompt();
     void add_student(std::string name, std::string surname, std::string stu_num, std::string class_rec);
     void read_database();
     void save_database();
