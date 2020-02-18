@@ -75,14 +75,14 @@ void MZMTIN002::add_student(string name, string surname, const string& stu_num, 
 void MZMTIN002::display_data(const string& stu_num) {
     puts("Searching...");
     bool found = false;
-    for (StudentRecord & record: records) {
-        if (record.stu_num.c_str() == stu_num) {
+    for (int i = 0; i < records.size(); ++i) {
+        if (records[i].stu_num == stu_num) {
             puts("Student found:");
             found = true;
-            cout << "Name:           " << record.name.c_str() << endl; // printf string formatting didn't wanna work so this is what we've got.
-            cout << "Surname:        " << record.surname.c_str() << endl;
-            cout << "Student Number: " << record.stu_num.c_str() << endl;
-            cout << "Class Record:   " << record.class_rec.c_str() << endl;
+            cout << "Name:           " << records[i].name.c_str() << endl; // printf string formatting didn't wanna work so this is what we've got.
+            cout << "Surname:        " << records[i].surname.c_str() << endl;
+            cout << "Student Number: " << records[i].stu_num.c_str() << endl;
+            cout << "Class Record:   " << records[i].class_rec.c_str() << endl;
 
             break;
         }
@@ -95,19 +95,22 @@ void MZMTIN002::display_data(const string& stu_num) {
 void MZMTIN002::grade_student(const string& stu_num) {
     puts("Searching...");
     bool found = false;
-    for (StudentRecord & record: records) {
-        if (record.stu_num.c_str() == stu_num) {
+    for (int i = 0; i < records.size(); ++i) {
+        if (records[i].stu_num == stu_num) {
             puts("Student found:");
             found = true;
-            stringstream ss(record.class_rec.c_str());
+            stringstream ss(records[i].class_rec);
             string token;
             int total = 0;
             int count = 0;
             while (ss >> token) {
-                total += stoi(token);
+                stringstream ss2(token);
+                int curr;
+                ss2 >> curr;
+                total += curr;
                 count++;
             }
-            cout << "Grade for " << record.stu_num.c_str() << " is " << nearbyint((double) total/count) << endl;
+            cout << "Grade for " << records[i].stu_num.c_str() << " is " << nearbyint((double) total/count) << endl;
             break;
         }
     }
