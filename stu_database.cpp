@@ -9,6 +9,7 @@ void MZMTIN002::read_database() {
     puts("Enter the name of the text file:");
     string filename;
     getline(cin, filename);
+    puts("\nOpening file...");
     ifstream in(filename.c_str());
 
     if(!in) {
@@ -39,8 +40,11 @@ void MZMTIN002::read_database() {
 }
 
 void MZMTIN002::save_database() {
-    puts("Opening file...");
-    ofstream out("records.txt");
+    puts("Enter the name of the text file:");
+    string filename;
+    getline(cin, filename);
+    puts("\nOpening file...");
+    ofstream out(filename);
     if (out.is_open()) {
         puts("Writing file...");
         for (int i = 0; i < records.size(); ++i) {
